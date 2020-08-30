@@ -1,29 +1,30 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
 # Site settings
-title: *folio
-email: you@example.com
+title: 문과도 취업시켜줘
+email: yeji.woo97@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  A simple, whitespace, helvetica based portfolio theme.
-baseurl:  # the subpath of your site, e.g. /blog/
-url:  # the base hostname & protocol for your site
-twitter_username: twitter_username
-github_username:  github_username
+  휴 이거 만드느라 엄청 힘들었다.
+  나도~ 취업할래~ 
+baseurl: "/home" # the subpath of your site, e.g. /blog
+url: "http://cuza22.github.io" # the base hostname & protocol for your site
+twitter_username: doongoonyee
+github_username:  cuza22
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
 
-highlighter: rouge
+# Third-party services
+# just leave someone empty to disable it
+# google_analytics: 
+disqus_shortname:
 
-# Pagination
-paginate: 15
-paginate_path: "/blog/page:num/"
-
-
-collections:
-  portfolio:
-    output: true
-    permalink: /portfolio/:path/
-  poetry:
-    output: true
-    permalink: /poetry/:path/
-
-
+# used this for post_excerpt at index_page
+excerpt_separator: <!--description-->

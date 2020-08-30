@@ -11,8 +11,8 @@ email: yeji.woo97@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   휴 이거 만드느라 엄청 힘들었다.
   나도~ 취업할래~ 
-baseurl: "/home" # the subpath of your site, e.g. /blog
-url: "http://cuza22.github.io" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://cuza22.github.io/" # the base hostname & protocol for your site
 twitter_username: doongoonyee
 github_username:  cuza22
 

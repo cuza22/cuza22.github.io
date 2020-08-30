@@ -1,0 +1,64 @@
+I"�<h3 id="문제-링크">문제 링크</h3>
+<p><a href="http://https://www.acmicpc.net/problem/1655">boj.kr/1655</a></p>
+
+<p><img src="/assets/img/1655.jpg" alt="" /></p>
+
+<h3 id="코드">코드</h3>
+
+<p>파이썬으로 풀었다.</p>
+
+<p>문제 &gt; 단계별로 풀어보기 &gt; 우선순위 큐 에 있는 마지막 문제인데 그 전에 푸는 문제들이 모두 힙 트리를 이용해서 푸는 문제여서 풀이법을 쉽게 유추할 수 있었다!</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">import</span> <span class="n">heapq</span>
+<span class="n">import</span> <span class="n">sys</span>
+<span class="no">N</span><span class="o">=</span><span class="n">int</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="nf">stdin</span><span class="p">.</span><span class="nf">readline</span><span class="p">())</span>
+<span class="n">minheap</span><span class="p">,</span><span class="n">maxheap</span><span class="p">,</span><span class="n">answer</span><span class="o">=</span><span class="p">[],[],[]</span></code></pre></figure>
+
+<p>heapq를 import해와서 파이썬에 이미 구현되어있는 힙 트리를 이용하면 된다.</p>
+
+<p>이런게 있는줄 모르고 맨날 직접 구현하다 오류폭탄을 맞았던 기억이..</p>
+
+<p>중간값을 알기 위해서는 입력된 숫자들을 두 묶음으로 쪼개서, 왼쪽의 최댓값과 오른쪽의 최솟값만 알면 된다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">range</span><span class="p">(</span><span class="no">N</span><span class="p">):</span>
+  <span class="n">x</span><span class="o">=</span><span class="n">int</span><span class="p">(</span><span class="n">sys</span><span class="p">.</span><span class="nf">stdin</span><span class="p">.</span><span class="nf">readline</span><span class="p">())</span>
+  <span class="k">if</span> <span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+    <span class="n">heapq</span><span class="p">.</span><span class="nf">heappush</span><span class="p">(</span><span class="n">maxheap</span><span class="p">,(</span><span class="o">-</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">))</span></code></pre></figure>
+
+<p>첫번째 입력은 왼쪽(최대 힙)에 담는다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="n">elif</span> <span class="n">i</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">maxheap</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">&lt;=</span><span class="ss">x:
+      </span><span class="n">heapq</span><span class="p">.</span><span class="nf">heappush</span><span class="p">(</span><span class="n">minheap</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+    <span class="ss">else:
+      </span><span class="n">heapq</span><span class="p">.</span><span class="nf">heappush</span><span class="p">(</span><span class="n">minheap</span><span class="p">,</span><span class="n">heapq</span><span class="p">.</span><span class="nf">heappop</span><span class="p">(</span><span class="n">maxheap</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+      <span class="n">heapq</span><span class="p">.</span><span class="nf">heappush</span><span class="p">(</span><span class="n">maxheap</span><span class="p">,(</span><span class="o">-</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">))</span></code></pre></figure>
+
+<p>두번째 입력은 오른쪽(최소 힙)에 담는다.</p>
+
+<p>두번째 입력이 처음 입력된 숫자보다 작다면, 왼쪽에 있던 숫자를 오른쪽으로 보내주고 새 숫자는 왼쪽에 집어넣장.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="ss">else:   
+    </span><span class="k">if</span> <span class="n">minheap</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">&lt;</span><span class="ss">x:
+      </span><span class="n">heapq</span><span class="p">.</span><span class="nf">heappush</span><span class="p">(</span><span class="n">minheap</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+      <span class="n">med</span><span class="o">=</span><span class="n">minheap</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+      <span class="k">if</span> <span class="n">len</span><span class="p">(</span><span class="n">maxheap</span><span class="p">)</span><span class="o">&lt;</span><span class="n">len</span><span class="p">(</span><span class="n">minheap</span><span class="p">):</span>
+        <span class="n">tmp</span><span class="o">=</span><span class="n">heapq</span><span class="p">.</span><span class="nf">heappop</span><span class="p">(</span><span class="n">minheap</span><span class="p">)</span>
+        <span class="n">heapq</span><span class="p">.</span><span class="nf">heappush</span><span class="p">(</span><span class="n">maxheap</span><span class="p">,(</span><span class="o">-</span><span class="n">tmp</span><span class="p">,</span><span class="n">tmp</span><span class="p">))</span>
+    <span class="ss">else:
+      </span><span class="n">heapq</span><span class="p">.</span><span class="nf">heappush</span><span class="p">(</span><span class="n">maxheap</span><span class="p">,(</span><span class="o">-</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+      <span class="k">if</span> <span class="n">len</span><span class="p">(</span><span class="n">maxheap</span><span class="p">)</span><span class="o">&gt;</span><span class="n">len</span><span class="p">(</span><span class="n">minheap</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">tmp</span><span class="o">=</span><span class="n">heapq</span><span class="p">.</span><span class="nf">heappop</span><span class="p">(</span><span class="n">maxheap</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">heapq</span><span class="p">.</span><span class="nf">heappush</span><span class="p">(</span><span class="n">minheap</span><span class="p">,</span><span class="n">tmp</span><span class="p">)</span>
+  <span class="n">answer</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">maxheap</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span></code></pre></figure>
+
+<p>세번째 입력부터는 왼쪽, 오른쪽의 숫자를 비교하며 왼쪽 리스트의 맨 앞에(maxheap[0][1]) 중간값이 들어있도록 유지하면 된다!</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="ss">answer:
+  </span><span class="n">sys</span><span class="p">.</span><span class="nf">stdout</span><span class="p">.</span><span class="nf">writelines</span><span class="p">(</span><span class="s1">'%d'</span><span class="o">%</span><span class="n">i</span><span class="o">+</span><span class="s1">'\n'</span><span class="p">)</span></code></pre></figure>
+
+<p>정답 출력하기 
+조금이라도 빠르게 하려고 입출력을 input() print()가 아니라 sys 어쩌구로 했당</p>
+
+<p>끝</p>
+:ET

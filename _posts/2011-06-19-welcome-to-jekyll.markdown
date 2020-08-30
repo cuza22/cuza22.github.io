@@ -5,27 +5,30 @@ date: 2020-08-31 03:35:00 +0900
 categories: announcements
 ---
 안녕하세요.
+
 블로그는 공사 중입니다. 두근두근~
 
-이 페이지는 참고를 위에 남겨두겠음.
+코드 입력하는 법
 
-<코드 입력하는 법>
 {% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
+print('Hello, World!')
 {% endhighlight %}
 
-<링크 연결하는 법>
+링크 연결하는 법
+
 [Jekyll docs][jekyll-docs]
+
 [Jekyll’s GitHub repo][jekyll-gh]
+
 [Jekyll Talk][jekyll-talk]
 
 [jekyll-docs]: http://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll
 [jekyll-talk]: https://talk.jekyllrb.com/
+
+날짜 입력하는 법: F5 누르기!
+
+오전 4:09 2020-08-31
 
 <!--description-->
 

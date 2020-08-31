@@ -1,0 +1,45 @@
+I"3<hr />
+<h2 id="문제-링크"><strong>문제 링크</strong></h2>
+<p><a href="http://https://www.acmicpc.net/problem/1655">boj.kr/1016</a></p>
+
+<p><img src="/assets/img/1016.jpg" alt="" /></p>
+
+<hr />
+<h2 id="코드"><strong>코드</strong></h2>
+
+<p>에라토스테네스의 체를 쓴다는 아이디어만 얻으면 금방 풀리는 문제</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import math
+n,m=map(int,input().split())
+num=list(range(n,m+1))
+</code></pre></div></div>
+<p>sqrt를 쓰기 위해 math를 import합니다. <br />
+n,m 사이에 있는 제곱ㄴㄴ수만 알면 되므로 n~m까지의 수를 담고 있는 리스트 num을 만듭니다. <br />
+m은 n보다 1,000,000만큼 크거나 작으므로 num의 크기가 너무 커질 우려는 없습니다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+for i in range(2,int(math.sqrt(m))+1):
+  j=i*i
+  if n%j==0:
+    div=n
+  else:
+    div=(n//j)*j+j
+
+  for k in range(div,m+1,j):
+    num[k-n]=0
+
+</code></pre></div></div>
+<ol>
+  <li><strong>i</strong>는 2~sqrt(m)인 정수입니다.</li>
+  <li><strong>j</strong>는 i의 제곱입니다. m보다 커질 일이 없습니다. num 안에 있는 수를 j의 배수로 나눠줍시다.</li>
+  <li><strong>div</strong>는 num내에서 j로 나눠지는 가장 작은 수입니다. div부터 j까지 제곱의 배수를 하나씩 지워나갑니다.</li>
+  <li>남은 수는 제곱ㄴㄴ수 뿐!</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>t=0
+for i in range(m-n+1):
+  if num[i]&gt;0:
+    t+=1
+print(t)
+</code></pre></div></div>
+<p>num 리스트 안에는 제곱ㄴㄴ수만 남아있습니다. <br />
+그것들만 카운트해주면 끝~</p>
+:ET

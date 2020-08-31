@@ -1,0 +1,64 @@
+I"C<hr />
+<p>문제 링크
+=================== <br />
+<a href="http://https://www.acmicpc.net/problem/1655">boj.kr/1655</a></p>
+
+<p><img src="/assets/img/1655.jpg" alt="" /></p>
+
+<hr />
+<p>코드
+======</p>
+
+<p>파이썬으로 풀었다.<br />
+문제 &gt; 단계별로 풀어보기 &gt; 우선순위 큐 에 있는 마지막 문제인데 그 전에 푸는 문제들이 모두 힙 트리를 이용해서 푸는 문제여서 풀이법을 쉽게 유추할 수 있었다!</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import heapq
+import sys
+N=int(sys.stdin.readline())
+minheap,maxheap,answer=[],[],[]
+</code></pre></div></div>
+
+<p>heapq를 import해와서 파이썬에 이미 구현되어있는 힙 트리를 이용하면 된다.<br />
+이런게 있는줄 모르고 맨날 직접 구현하다 오류폭탄을 맞았던 기억이..</p>
+
+<p>중간값을 알기 위해서는 입력된 숫자들을 두 묶음으로 쪼개서, 왼쪽의 최댓값과 오른쪽의 최솟값만 알면 된다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for i in range(N):
+  x=int(sys.stdin.readline())
+  if i==0:
+    heapq.heappush(maxheap,(-x,x))
+</code></pre></div></div>
+<p>첫번째 입력은 왼쪽(최대 힙)에 담는다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  elif i==1:
+    if maxheap[0][1]&lt;=x:
+      heapq.heappush(minheap,x)
+    else:
+      heapq.heappush(minheap,heapq.heappop(maxheap)[1])
+      heapq.heappush(maxheap,(-x,x))
+</code></pre></div></div>
+<p>두번째 입력은 오른쪽(최소 힙)에 담는다. <br />
+두번째 입력이 처음 입력된 숫자보다 작다면, 왼쪽에 있던 숫자를 오른쪽으로 보내주고 새 숫자는 왼쪽에 집어넣장.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  else:   
+    if minheap[0]&lt;x:
+      heapq.heappush(minheap,x)
+      med=minheap[0]
+      if len(maxheap)&lt;len(minheap):
+        tmp=heapq.heappop(minheap)
+        heapq.heappush(maxheap,(-tmp,tmp))
+    else:
+      heapq.heappush(maxheap,(-x,x))
+      if len(maxheap)&gt;len(minheap)+1:
+        tmp=heapq.heappop(maxheap)[1]
+        heapq.heappush(minheap,tmp)
+  answer.append(maxheap[0][1])
+</code></pre></div></div>
+<p>세번째 입력부터는 왼쪽, 오른쪽의 숫자를 비교하며 왼쪽 리스트의 맨 앞에(maxheap[0][1]) 중간값이 들어있도록 유지하면 된다!</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for i in answer:
+  sys.stdout.writelines('%d'%i+'\n')
+</code></pre></div></div>
+<p>정답 출력하기 
+조금이라도 빠르게 하려고 입출력을 input() print()가 아니라 sys 어쩌구로 했당</p>
+
+<p>끝</p>
+:ET

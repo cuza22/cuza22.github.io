@@ -10,7 +10,7 @@ title: 문과도 취업시켜줘
 email: yeji.woo97@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   궁둥이의 블로그
-baseurl: "/blog" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://cuza22.github.io" # the base hostname & protocol for your site
 twitter_username: doongoonyee
 github_username:  cuza22

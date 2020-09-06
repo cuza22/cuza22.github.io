@@ -1,0 +1,200 @@
+I"<hr />
+<p>파도 파도 끝이 없는 단순선형회귀분석! <br />
+새롭게 아는 내용이 생길 때마다 이 포스트에 추가할 예정.</p>
+<hr />
+<h4 id="1-가정"><strong>1. 가정</strong></h4>
+<ul>
+  <li>$ϵ ∼ N(0,σ^2)$ (iid)</li>
+  <li>$Y∼N(\hatβ_{0}+\hatβ_{1}X,σ^2)$</li>
+  <li>X와 Y는 선형 관계</li>
+</ul>
+
+<hr />
+<h4 id="2-least-square-method"><strong>2. Least Square Method</strong></h4>
+<blockquote>
+  <p>결론</p>
+</blockquote>
+
+<ul>
+  <li>$\hatβ_{1}=\frac{∑(y_i-\bar{y})(x_i-\bar{x})}{∑(x_i-\bar{x})^2}$</li>
+  <li>$\hat{\beta_0}=\bar{y}-{\beta_1}\bar{x}$</li>
+</ul>
+
+<blockquote>
+  <p>도출</p>
+</blockquote>
+
+<p>$S(\beta_0,\beta_1)=∑ϵ^2=∑(y_i-\beta_0-\beta_1x_i)^2$  <br />
+ minimize errors</p>
+
+<p>$FOC$</p>
+
+<p>1) $\frac{∂}{∂\hat{\beta_0}}∑(y_i-\hat{\beta_0}-\hat{\beta_1}{x_i})^2=0$ 
+ ⟹ $-2∑(y_i-\hat{\beta_0}-\hat{\beta_1}{x_i})=0$
+ ⟹ $∑y_i-\hat{\beta_0}-\hat{\beta_1}{x_i}=0$
+ ⟹ $\hat{\beta_0}=\bar{y}-\hat{\beta_1}\bar{x}$</p>
+
+<p>2) $\frac{∂}{∂\hat{\beta_1}}∑(y_i-\hat{\beta_0}-\hat{\beta_1}{x_i})^2=0$  <br />
+ ⟹ $-2∑(y_i-\hat{\beta_0}-\hat{\beta_1}{x_i})(x_i)=0$  <br />
+ ⟹ $∑(y_i-(\bar{y}-\hat{\beta_1}\bar{x})-\hat{\beta_1}{x_i})(x_i)=0$  <br />
+ ⟹ $∑x_iy_i-\bar{y}∑x_i+\hat{\beta_1}\bar{x}∑x_i-\hat{\beta_1}∑x_i^2=0$ <br />
+ ⟹ $∑x_iy_i-n\bar{x}\bar{y}+\hat{\beta_1}\bar{x}^2-\hat{\beta_1}∑x_i^2=0$  <br />
+ ⟹ $\hat{\beta_1}(\bar{x}^2-∑x_i^2)=∑x_iy_i-n\bar{x}\bar{y}$  <br />
+ ⟹ $\hat{\beta_1}=\frac{∑x_iy_i-n\bar{x}\bar{y}}{\bar{x}^2-∑x_i^2}$</p>
+
+<p>$SOC$</p>
+
+<p>$\frac{∂^2S}{∂\beta_0^2}=2∑1=2n&gt;0$ <br />
+$\frac{∂^2S}{∂\beta_1^2}=2∑x_i^2&gt;0$ <br />
+$\frac{∂^2S}{∂\beta_0\beta_1}=2∑x_i$</p>
+
+<blockquote>
+  <p>$\hat{\beta_1}$의 성질</p>
+</blockquote>
+
+<ul>
+  <li>$\hat{\beta_1}=\frac{∑(x_i-\bar{x})(y_i-\bar{y})}{∑(x_i-\bar{x})^2}=\frac{Cov(X,Y)}{Var(X)}=\frac{s_{xy}}{s_{xx}}=r\frac{s_{y}}{s_{x}}$</li>
+</ul>
+
+<hr />
+<h4 id="3-잔차의-성질"><strong>3. 잔차의 성질</strong></h4>
+<p>1) $∑e_i=0$ <br />
+2) $∑x_ie_i=0$ <br />
+ 위의 normal equation에서 도출</p>
+
+<p>3) $∑\hat{y_i}e_i=0$ <br />
+1), 2) 이용해 도출</p>
+
+<hr />
+<h4 id="4표준-오차"><strong>4.표준 오차</strong></h4>
+<p>$ϵ ∼ N(0,σ^2)$ 의 $σ^2$는 알려지지 않음. <br />
+SSE($∑e_i^2$)를 통해 unbiased estimator을 추정하여 사용.</p>
+
+<ul>
+  <li>$\hat{σ^2}=\frac{∑e_i^2}{n-2}=\frac{∑(y_i-\hat{y_i})^2}{n-2}$</li>
+  <li>
+    <ul>
+      <li>*
+        <h4 id="5sstssrsse"><strong>5.SST,SSR,SSE</strong></h4>
+        <p>1) $SST$: $∑(y_i-\bar{y})^2$ ⟹ 전체 변동</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>2) $SSR$: $∑(y_i-\hat{y_i})^2$ ⟹ 전체 변동 중 모형이 설명하는 정도</p>
+
+<p>3) $SSE$: $∑(\hat{y_i}-\bar{y_i})^2$ ⟹ 잔차 제곱</p>
+
+<ul>
+  <li>$SST=SSR+SSE$ <span class="red"><em>증명 추가 필요</em></span></li>
+</ul>
+
+<hr />
+<h4 id="6r2"><strong>6.$R^2$</strong></h4>
+<p>$R^2=1-\frac{SSE}{SST}=\frac{SSR}{SST}$</p>
+
+<ul>
+  <li>$R^2=[Corr(X,Y)]^2=[Corr(Y,\hat{Y})]^2$ <span class="red"><em>증명 찾아야함</em></span></li>
+</ul>
+
+<hr />
+<h4 id="7estimator의-분포"><strong>7.estimator의 분포</strong></h4>
+<p><span class="red"><em>도출과정 추가 필요</em></span></p>
+<blockquote>
+  <p>$ϵ$</p>
+</blockquote>
+
+<p>$ϵ ∼ N(0,σ^2)$ 에서 시작</p>
+
+<blockquote>
+  <p>$\hat{\beta_1}$</p>
+</blockquote>
+
+<ul>
+  <li>$E(\hat{\beta_1})=\beta_1$</li>
+  <li>$Var(\hat{\beta_1})=\frac{σ^2}{S_{xx}}$</li>
+</ul>
+
+<blockquote>
+  <p>$\hat{\beta_0}$</p>
+</blockquote>
+
+<ul>
+  <li>$E(\hat{\beta_0})=\beta_0$</li>
+  <li>$Var(\hat{\beta_1})=σ^2[\frac{1}{n}+\frac{\bar{x}^2}{S_{xx}}]$</li>
+</ul>
+
+<p>*$\hat{\beta_0},\hat{\beta_1}$ 모두 불편추정량 (unbiased estimator)
+*$σ^2$는 $\hat{σ^2}$으로 추정</p>
+
+<hr />
+<h4 id="8가설검정신뢰구간"><strong>8.가설검정&amp;신뢰구간</strong></h4>
+<blockquote>
+  <p>$H_0:\beta=0$</p>
+</blockquote>
+
+<p>기울기&amp;절편이 의미를 가지는 지 검정</p>
+<ul>
+  <li>$H_0:\beta_1=0$</li>
+  <li>$H_0:\beta_0=0$ <br />
+   ⟹ $t=\frac{\hat{\beta}}{s.e.(\hat{\beta})}$
+    <blockquote>
+      <p>$H_0:\beta=\beta_0$</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p>위와 동일하게 기울기&amp;절편에 수행 가능
+   ⟹ $t=\frac{\hat{\beta}-\beta_0}{s.e.(\hat{\beta})}$</p>
+
+<blockquote>
+  <p>$H_0:{Corr(X,Y)}=0$</p>
+</blockquote>
+
+<p>  ⟹ $t=\frac{Corr(X,Y)\sqrt{n-2}}{\sqrt{1-[Corr(X,Y)]^2}}$</p>
+
+<p>SLR의 통계량은 모두 자유도 n-2인 t-분포 따름 <span class="red"><em>증명  추가 필요</em></span></p>
+<hr />
+<h4 id="9예측ymu"><strong>9.예측($y,\mu$)</strong></h4>
+<blockquote>
+  <p>점추정</p>
+</blockquote>
+
+<p>어떤 $x_0$에 대응하는 $Y$의 예측값은,</p>
+
+<ul>
+  <li>$\hat{y_0}=\hat{\beta_0}+\hat{\beta_1}x_0$</li>
+</ul>
+
+<p>$X=x_0$일 때 평균반응 $\mu_0$의 예측값은,</p>
+
+<ul>
+  <li>$\hat{\mu_0}=\hat{\beta_0}+\hat{\beta_1}x_0$ (위와 동일)</li>
+</ul>
+
+<blockquote>
+  <p>구간추정</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>$\hat{y_0} \pm t_{(n-2,\frac{\alpha}{2})}s.e.(\hat{y_0})$ <br />
+$s.e.(\hat{y_0})=\hat{\sigma}\sqrt{1+\frac{1}{n}+\frac{(x_0-\bar{x})^2}{s_{xx}}}$</p>
+  </li>
+  <li>
+    <p>$\hat{\mu_0} \pm t_{(n-2,\frac{\alpha}{2})}s.e.(\hat{\mu_0})$ <br />
+$s.e.(\hat{\mu_0})=\hat{\sigma}\sqrt{\frac{1}{n}+\frac{(x_0-\bar{x})^2}{s_{xx}}}$</p>
+  </li>
+</ul>
+
+<p>-$\mu$의 표준오차가 $y$의 표준오차보다 작다.  <br />
+-$\bar{x}$에서 멀어질수록 오차가 커진다. 즉, 예측의 불확실성이 커진다는 뜻.</p>
+<hr />
+<h4 id="10아직-모르겠는-것들"><strong>10.아직 모르겠는 것들</strong></h4>
+<ul>
+  <li>$Corr(Y,\hat{Y})$의 의미, 산점도</li>
+  <li>$Corr(Y,\hat{Y})=\vert{Corr(X,Y)}\vert$</li>
+  <li>암튼 얘네 둘에 관한 것들.. 아무리 인터넷을 찾아도 안 나와~~</li>
+</ul>
+:ET

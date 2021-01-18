@@ -1,5 +1,5 @@
 ---
-name: 우테코
+name: WoowaCourse
 title: 우테코
 ---
 {% for tag in site.tags %}

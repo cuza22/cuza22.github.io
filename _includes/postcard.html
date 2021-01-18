@@ -1,0 +1,13 @@
+<article class="post_card post">
+    <header class="post_header">
+      <h3 class="post_title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+      <time class="post_date">Posted on {{ post.date | date: "%B %d, %Y" }}</time>
+    </header>
+    <div class="post_excerpt">
+      <p>
+        <div class="tags">Tags: {% for tag in post.tags %}
+          <a href="{{ '/tags/' | prepend: site.baseurl }}{{ tag }}" class="tag">{{ tag }}</a> 
+          {% endfor %}</div>
+      </p> 
+    </div>
+</article>

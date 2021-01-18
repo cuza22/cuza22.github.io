@@ -210,6 +210,23 @@ p.readmore {
   }
 }
 
+.tag {
+  color:#ff9100;
+  padding-top:2px;
+  padding-bottom:2px;
+  padding-left:6px;
+  padding-right:6px;
+  border:1.5px solid #ff9100;
+  border-radius:10%;
+  font-size:1.4rem;
+  cursor:pointer;
+}
+
+.tag:hover {
+  color:#FFFFFF;
+  background-color: #ff9100;
+}
+
 .post_archive {
 
 }

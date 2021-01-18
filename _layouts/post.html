@@ -2,10 +2,13 @@
 layout: default
 ---
 <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-    </script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/math...">
-    </script> 
+
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/math..."></script> 
+
 <article class="post" itemscope itemtype="https://schema.org/BlogPosting">
 
   <header class="artilce_header">
@@ -18,16 +21,14 @@ layout: default
   </div>
 
   <footer class="article-footer">
+    
+    {% include author.html %}
 
+    {% include connection.html %}
+  
+    {% include comments.html %}
+  
   <!-- {% include share.html %} -->
-
-  <!-- <hr/> -->
-
-  {% include author.html %}
-
-  {% include connection.html %}
-
-  {% include comments.html %}
 
   </footer>
 

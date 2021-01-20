@@ -9,7 +9,7 @@ layout: default
 
 <article class="post" itemscope itemtype="https://schema.org/BlogPosting">
 
-  <header class="artilce_header">
+  <header class="article_header">
     <h1 class="artilce_title" itemprop="name headline">{{ page.title }}</h1>
     <p class="artilce_meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">Posted on {{ page.date | date: "%B %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
     {% if page.tags %}<div class="tags">Tags: {% for tag in page.tags %}<a href="{{ '/tags/' | prepend: site.baseurl }}{{ tag }}" class="tag">{{ tag }}</a> {% endfor %}</div>{% endif %}
@@ -29,6 +29,10 @@ layout: default
   
     {% include comments.html %}
   
+    <div class="pagination older-post">
+      <a href="{{ '/' | prepend: site.baseurl }}"><data data-icon="ei-arrow-right"></data> Back to Posts </a>
+    </div>
+
   <!-- {% include share.html %} -->
 
   </footer>

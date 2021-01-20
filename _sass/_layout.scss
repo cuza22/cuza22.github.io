@@ -181,7 +181,17 @@ input#menu-toggle {
 }
 
 .post-list {
-  
+  list-style:none;
+  margin:0;
+  padding:0;
+  margin-inline-start:0px;
+  margin-inline-end:0px;
+}
+
+.post-card {
+  padding-top:20px;
+  padding-bottom:15px;
+  border-bottom:1px solid #e6e6e6;
 }
 
 .post_header {
@@ -247,8 +257,6 @@ p.readmore {
 .article-footer {
 
   padding:2rem 0;
-  border-top:1px solid #ddd;
-  border-bottom:1px solid #ddd;
 
   .share {
     text-align:center;
@@ -380,7 +388,9 @@ div.post_title span.date {
 
 
 .pagination {
-  width:50%;
+  margin:0;
+  padding:10px 0;
+  text-align:enter;
 }  
 
 .pagination.older-post{

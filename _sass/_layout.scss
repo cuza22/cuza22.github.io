@@ -390,10 +390,20 @@ div.post_title span.date {
 .pagination {
   margin:0;
   padding:10px 0;
-  text-align:enter;
+
+  .previous {
+    float: left;
+    text-align: left;
+  }
+
+  .next {
+    float: right;
+    text-align: right;
+  }
+  
 }  
 
-.pagination.older-post{
+.pagination.back{
   float: right;
   text-align: right;
 }

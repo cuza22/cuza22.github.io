@@ -13,7 +13,7 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://cuza22.github.io" # the base hostname & protocol for your site
 twitter_username:
-github_username:  cuza22
+github_username: cuza22
 
 # Build settings
 markdown: kramdown
@@ -40,3 +40,8 @@ defaults:
       type: tags
     values:
       layout: tag
+
+# Add pagination - https://maruzzing.github.io/project/blogwithjekyll/Jekyll-페이징-기능-추가하기/
+plugins: [jekyll-paginate]
+paginate: 5 # 한 페이지 당 표시하고자 하는 포스트의 최대 개수
+paginate_path: '/page:num' # URL 규칙

@@ -1,14 +1,25 @@
 ---
 layout: default
 title: 예지렌지의 블로그
+pagination:
+  enabled:true
 ---
 
 <div class="home">
+  <div id="featured-posts">Featured Posts</div>
   <!-- post list -->
-  <div class="post-list">
-    {% for post in site.posts limit:5%}
-    {% include postcard.html %}
+  <ul class="post-list">
+    {% for post in paginator.posts %}
+      {% include postcard.html %}
     {% endfor %}
-    <div class="pagination older-post"><a href="./categories"><data data-icon="ei-arrow-right"></data> Posts </a></div>
+  </ul>
+  <div class="pagination">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}" class="previous"><data data-icon="ei-arrow-left"></data> Previous </a>
+    {% endif %}
+
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}" class="next"> Next <data data-icon="ei-arrow-right"></a>
+    {% endif %}
   </div>
 </div>

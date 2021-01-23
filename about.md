@@ -4,5 +4,4 @@ title: About
 permalink: /about/
 ---
 
-이걸 첫 화면으로 바꾸기
-
+옴뇽뇽 나는 오렌지다 데굴데굴데굴

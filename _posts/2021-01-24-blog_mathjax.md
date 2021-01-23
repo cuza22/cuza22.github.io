@@ -1,6 +1,7 @@
 ---
 layout: post
-title: 블로그 뜯어고치기 [1] -  mathjax로 수식 사용하기
+title: 블로그 뜯어고치기 [1] - mathjax로 수식 사용하기
+date: 2021-01-24 05:39:59
 category: etc
 tags: [blog]
 use_math: true

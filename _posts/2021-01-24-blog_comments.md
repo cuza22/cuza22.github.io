@@ -56,7 +56,7 @@ tags: [blog]
 
 6. post.html의 footer에 해당 코드를 붙여넣는다. 
 
-    나는 좀 더 깔끔하게 하기 위해서 comments.html을 만들고 {% include comments.html %}로 댓글 기능을 추가했다. 
+    나는 좀 더 깔끔하게 하기 위해서 comments.html을 만들고 ```{% include comments.html %}```로 댓글 기능을 추가했다. 
 
 그럼 이제 모든 포스트에 댓글 기능이 추가되었다.
 

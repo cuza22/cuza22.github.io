@@ -1,10 +1,10 @@
 ---
-layout: post
 title: 블로그 뜯어고치기 [1] - mathjax로 수식 사용하기
-date: 2021-01-24 05:39:59
-category: etc
+author: yeji
+date: 2021-01-24 05:39:59 +0900
+categories: [Blog]
 tags: [blog]
-use_math: true
+math: true
 ---
 * * *
 최대한 심플해보이는 테마를 적용시켰더니 블로그에 기능이 없어도 너무 없다. 

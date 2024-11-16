@@ -1,9 +1,9 @@
 ---
-layout: post
 title:  (우테코) 프리코스 Week 1 - ⚾ 숫자 야구 게임
-date: 2020-12-01
-category: etc
-tags: [etc, WoowaCourse]
+author: yeji
+date: 2020-12-01 00:00:00 +0900
+categories: [WoowaCourse]
+tags: [WoowaCourse]
 ---
 * * *
 ## **🔗 Github 링크**

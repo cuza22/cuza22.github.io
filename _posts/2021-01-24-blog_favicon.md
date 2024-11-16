@@ -1,8 +1,8 @@
 ---
-layout: post
 title: 블로그 뜯어고치기 [3] - favicon 추가하기
-date: 2021-01-24 07:49:35
-category: etc
+author: yeji
+date: 2021-01-24 07:49:35 +0900
+categories: [Blog]
 tags: [blog]
 ---
 * * *

@@ -1,9 +1,9 @@
 ---
-layout: post
 title:  (우테코) 프리코스 Week3 - 🚇 지하철 노선도 미션
-date: 2020-12-15
-category: etc
-tags: [etc, WoowaCourse]
+author: yeji
+date: 2020-12-15 00:00:00 +0900
+categories: [WoowaCourse]
+tags: [WoowaCourse]
 ---
 * * *
 

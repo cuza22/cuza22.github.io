@@ -1,9 +1,9 @@
 ---
-layout: post
 title:  (우테코) 최종 테스트 - 🚇 지하철 노선도 경로 조회
-date: 2020-12-23
-category: etc
-tags: [etc, WoowaCourse]
+author: yeji
+date: 2020-12-23 00:00:00 +0900
+categories: [WoowaCourse]
+tags: [WoowaCourse]
 ---
 * * *
 ## 🔗 Github Link

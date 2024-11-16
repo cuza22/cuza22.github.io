@@ -1,9 +1,9 @@
 ---
-layout: post
 title:  (우테코) 프리코스 Week 0
-date: 2020-11-27
-category: etc
-tags: [etc, WoowaCourse]
+author: yeji
+date: 2020-11-27 00:00:00 +0900
+categories: [WoowaCourse]
+tags: [WoowaCourse]
 ---
 * * *
 우아한테크코스 1차에 합격했다.

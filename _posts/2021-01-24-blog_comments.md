@@ -1,8 +1,8 @@
 ---
-layout: post
 title: 블로그 뜯어고치기 [2] - utterances로 댓글 기능 추가하기
-date: 2021-01-24 06:39:37 
-category: etc
+author: yeji
+date: 2021-01-24 06:39:37 +0900
+categories: [Blog]
 tags: [blog]
 ---
 * * *

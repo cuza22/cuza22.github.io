@@ -1,9 +1,9 @@
 ---
-layout: post
 title:  (우테코) 프리코스 Week2 - 🚗 자동차 경주 게임
-date: 2020-12-08
-category: etc
-tags: [etc, WoowaCourse]
+author: yeji
+date: 2020-12-08 00:00:00 +0900
+categories: [WoowaCourse]
+tags: [WoowaCourse]
 ---
 * * *
 ## **🔗 Github 링크**

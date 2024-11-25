@@ -688,8 +688,8 @@ $btn-mb: 0.5rem;
   height: 100%;
   overflow-y: auto;
   width: $sidebar-width;
-  // background: var(--sidebar-bg);
-  background: linear-gradient(0deg, rgba(253,187,45,1) 0%, rgba(255,248,218,1) 100%);
+  background: var(--sidebar-bg);
+  // background: linear-gradient(0deg, rgba(253,187,45,1) 0%, rgba(255,248,218,1) 100%);
   border-right: 1px solid var(--sidebar-border-color);
 
   /* Hide scrollbar for IE, Edge and Firefox */
